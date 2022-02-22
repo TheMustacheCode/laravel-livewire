@@ -26,8 +26,8 @@
                                 <label for="" class="text-sm">País</label>
                                 <select 
                                     id="country_id"
-                                    class="appearance-none ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none
-                                    focus:ring-2 focus:ring-purple-300 @error('name')border border-red-500 @enderror"
+                                    class="ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none
+                                    focus:ring-2 focus:ring-purple-300 @error('country')border border-red-500 @enderror"
                                 >
                                     <option value="" disabled selected>Seleccione un país</option>
                                     @foreach($countries as $country)
@@ -43,7 +43,7 @@
                                 <select 
                                     id="state_id"
                                     class="ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none
-                                    focus:ring-2 focus:ring-purple-300 @error('name')border border-red-500 @enderror"
+                                    focus:ring-2 focus:ring-purple-300 @error('state')border border-red-500 @enderror"
                                 >
                                 </select>
                                 @error('state')
@@ -56,7 +56,7 @@
                                 <select 
                                     id="city_id"
                                     class="ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none
-                                    focus:ring-2 focus:ring-purple-300 @error('name')border border-red-500 @enderror"
+                                    focus:ring-2 focus:ring-purple-300 @error('city')border border-red-500 @enderror"
                                 >
                                 </select>
                                 @error('city')
