@@ -44,7 +44,7 @@
                                     id="state_id"
                                     class="ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none
                                     focus:ring-2 focus:ring-purple-300 @error('state')border border-red-500 @enderror"
-                                >
+                                    disabled >
                                 </select>
                                 @error('state')
                                 <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -57,7 +57,7 @@
                                     id="city_id"
                                     class="ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none
                                     focus:ring-2 focus:ring-purple-300 @error('city')border border-red-500 @enderror"
-                                >
+                                    disabled >
                                 </select>
                                 @error('city')
                                 <p class="text-red-500 text-sm">{{ $message }}</p>
@@ -97,7 +97,7 @@
                     }
                 });
                 $('#state_id, #city_id').val("");
-                $('#state').removeClass('d-none');
+                $('#state_id').prop("disabled", false);
             });
             $('#state_id').change(function () {
                 var $city = $('#city_id');
@@ -113,7 +113,7 @@
                         });
                     }
                 });
-                $('#city').removeClass('d-none');
+                $('#city_id').prop("disabled", false);
             });
         });
     </script>
