@@ -1,6 +1,6 @@
 <?php
-
 namespace Database\Seeders;
+use App\Models\Country;
 
 use Illuminate\Database\Seeder;
 
@@ -1210,7 +1210,6 @@ class CountriesTableSeeder extends Seeder
                 'short_code' => 'zw',
             ],
         ];
-
         Country::insert($countries);
     }
 }

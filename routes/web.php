@@ -37,3 +37,13 @@ Route::post('/contact', function (Request $request) {
 
     return back()->with('success_message', 'We received your message successfully and will get back to you shortly!');
 });
+
+
+
+Route::resource('dropdown', \App\Http\Controllers\AddressController::class)->only(['create', 'store']);
+
+Route::get('cities', [\App\Http\Controllers\CityController::class, 'index'])
+    ->name('cities.index');
+
+Route::get('states', [\App\Http\Controllers\StateController::class, 'index'])
+    ->name('states.index');

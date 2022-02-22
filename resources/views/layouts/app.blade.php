@@ -20,6 +20,8 @@
     </main>
 
     <livewire:scripts />
+
+    @yield('scripts')
 </body>
 
 </html>

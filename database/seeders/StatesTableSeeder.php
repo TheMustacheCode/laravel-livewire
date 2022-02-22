@@ -1,6 +1,6 @@
 <?php
-
 namespace Database\Seeders;
+use App\Models\State;
 
 use Illuminate\Database\Seeder;
 
@@ -276,6 +276,10 @@ class StatesTableSeeder extends Seeder
                 'name' => 'Wyoming'
             ]
         ];
+
+        foreach ($states as &$state) {
+            $state['country_id'] = 229; // United States
+        }
 
         State::insert($states);
     }
