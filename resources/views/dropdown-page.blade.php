@@ -19,98 +19,10 @@
                     <div class="absolute w-40 h-40 bg-purple-400 rounded-full z-0 -right-28 -top-28"></div>
                     <div class="absolute w-40 h-40 bg-purple-400 rounded-full z-0 -left-20 -bottom-20"></div>
                     <div class="relative z-1 bg-white rounded-xl shadow-lg p-8 text-gray-600 md:w-full">
-                        <form class="flex flex-col space-y-4">
-                            @csrf
-                            <div>
-                                <label for="" class="text-sm">País</label>
-                                <select 
-                                    id="country_id"
-                                    class="ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none
-                                    focus:ring-2 focus:ring-purple-300 @error('country')border border-red-500 @enderror"
-                                >
-                                    <option value="" disabled selected>Seleccione un país</option>
-                                    @foreach($countries as $country)
-                                        <option value="{{ $country->id }}">{{ $country->name }}</option>
-                                    @endforeach
-                                </select>
-                                @error('country')
-                                <p class="text-red-500 text-sm">{{ $message }}</p>
-                                @enderror
-                            </div>
-
-                            <div>
-                                <label for="" class="text-sm">Estado</label>
-                                <select 
-                                    id="state_id"
-                                    class="ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none
-                                    focus:ring-2 focus:ring-purple-300 @error('state')border border-red-500 @enderror"
-                                    disabled >
-                                </select>
-                                @error('state')
-                                <p class="text-red-500 text-sm">{{ $message }}</p>
-                                @enderror
-                            </div>
-
-                            <div>
-                                <label for="" class="text-sm">Ciudad</label>
-                                <select 
-                                    id="city_id"
-                                    class="ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none
-                                    focus:ring-2 focus:ring-purple-300 @error('city')border border-red-500 @enderror"
-                                    disabled >
-                                </select>
-                                @error('city')
-                                <p class="text-red-500 text-sm">{{ $message }}</p>
-                                @enderror
-                            </div>
-                            <button class="inline-flex self-end bg-purple-700 font-bold rounded-lg px-6 py-2 text-white disabled:opacity-50">
-                                Guardar Dirección
-                            </button>
-                        </form>
+                        @livewire('country-state-city')
                     </div>
                 </div>
             </div>
         </div>
-@endsection
-
-@section('scripts')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('#country_id').change(function () {
-                var $state = $('#state_id');
-                $.ajax({
-                    url: "{{ route('states.index') }}",
-                    data: {
-                        country_id: $(this).val()
-                    },
-                    success: function (data) {
-                        $state.html('<option value="" selected>Selecciona un estado</option>');
-                        $.each(data, function (id, value) {
-                            $state.append('<option value="' + id + '">' + value + '</option>');
-                        });
-                    }
-                });
-                $('#state_id, #city_id').val("");
-                $('#state_id').prop("disabled", false);
-            });
-            $('#state_id').change(function () {
-                var $city = $('#city_id');
-                $.ajax({
-                    url: "{{ route('cities.index') }}",
-                    data: {
-                        state_id: $(this).val()
-                    },
-                    success: function (data) {
-                        $city.html('<option value="" selected>Selecciona una ciudad</option>');
-                        $.each(data, function (id, value) {
-                            $city.append('<option value="' + id + '">' + value + '</option>');
-                        });
-                    }
-                });
-                $('#city_id').prop("disabled", false);
-            });
-        });
-    </script>
 @endsection
 
