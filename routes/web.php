@@ -42,8 +42,12 @@ Route::post('/contact', function (Request $request) {
 
 Route::resource('dropdown', \App\Http\Controllers\AddressController::class)->only(['create', 'store']);
 
-Route::get('cities', [\App\Http\Controllers\CityController::class, 'index'])
-    ->name('cities.index');
+Route::get('cities', [\App\Http\Controllers\CityController::class, 'index'])->name('cities.index');
 
-Route::get('states', [\App\Http\Controllers\StateController::class, 'index'])
-    ->name('states.index');
+Route::get('states', [\App\Http\Controllers\StateController::class, 'index'])->name('states.index');
+
+
+
+Route::get('dropdown/search', function () {
+    return view('dropdown-search');
+});
