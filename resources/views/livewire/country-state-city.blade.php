@@ -1,14 +1,11 @@
 <div>
     <form class="flex flex-col space-y-4">
         @csrf
-        <div>
-            <label for="" class="text-sm">País</label>
+        <div wire:ignore>
+            <label for="" class="text-sm">País Select 2</label>
             <select 
                 wire:model="selectedCountry"
-                id="country_id"
-                class="ring-1 ring-gray-300 w-full rounded-md px-4 py-2 mt-2 outline-none
-                focus:ring-2 focus:ring-purple-300 @error('country')border border-red-500 @enderror"
-            >
+                id="select2-country">
                 <option value="" selected>Seleccione un país</option>
                 @foreach($countries as $country)
                     <option value="{{ $country->id }}">{{ $country->name }}</option>
@@ -18,6 +15,7 @@
             <p class="text-red-500 text-sm">{{ $message }}</p>
             @enderror
         </div>
+
         @if($selectedCountry)
         <div>
             <label for="" class="text-sm">Estado</label>
@@ -59,3 +57,15 @@
         </button>
     </form>
 </div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    $("#select2-country").select2();
+
+    $('#select2-country').on('change', function(e) {
+        var countryId = $('#select2-country').select2("val");
+        @this.set('selectedCountry', countryId);
+    });
+});
+</script>
