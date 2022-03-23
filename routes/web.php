@@ -51,3 +51,7 @@ Route::get('states', [\App\Http\Controllers\StateController::class, 'index'])->n
 Route::get('dropdown/search', function () {
     return view('dropdown-search');
 });
+
+Route::get('datatables', function () {
+    return view('datatables-page');
+});
