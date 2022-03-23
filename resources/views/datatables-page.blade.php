@@ -6,7 +6,7 @@
         <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
             <div class="flex items-center justify-between">
                 <div class="max-w-lg w-full lg:max-w-xs">
-                    <label for="search" class="sr-only">Search</label>
+                    <label for="search" class="sr-only">Buscar</label>
                     <div class="relative">
                         <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <svg class="h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
@@ -17,7 +17,7 @@
                         </div>
                         <input id="search"
                             class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:border-blue-300 focus:shadow-outline-blue sm:text-sm transition duration-150 ease-in-out"
-                            placeholder="Search" type="search">
+                            placeholder="Buscar" type="search">
                     </div>
                 </div>
                 <div class="relative flex items-start">
@@ -26,7 +26,7 @@
                             class="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out">
                     </div>
                     <div class="ml-3 text-sm leading-5">
-                        <label for="active" class="font-medium text-gray-700">Active?</label>
+                        <label for="active" class="font-medium text-gray-700">Verificado?</label>
                     </div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                         <tr>
                             <th
                                 class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                Name
+                                Nombre
                             </th>
                             <th
                                 class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
@@ -46,13 +46,13 @@
                             </th>
                             <th
                                 class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                Status
+                                Estatus
                             </th>
                             <th class="px-6 py-3 bg-gray-50"></th>
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
-                        {{-- @foreach ($users as $user) --}}
+                        @foreach ($users as $user)
                         <tr>
                             <td class="px-6 py-4 whitespace-no-wrap">
                                 <div class="flex items-center">
@@ -62,35 +62,32 @@
                                     </div>
                                     <div class="ml-4">
                                         <div class="text-sm leading-5 font-medium text-gray-900">
-                                             $user->name 
+                                            {{ $user->name }}
                                         </div>
                                     </div>
                                 </div>
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap">
-                                <div class="text-sm leading-5 text-gray-900">$user->email </div>
+                                <div class="text-sm leading-5 text-gray-900">{{ $user->email }} </div>
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap">
-                                {{-- @if ($user->active) --}}
+                                @if ($user->active)
                                 <span
                                     class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                    Active
+                                    Verificado
                                 </span>
-                                {{-- <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium leading-4 bg-red-100 text-red-800">
-                                            Inactive
-                                        </span> --}}
-                                {{-- @else --}}
+                                @else
                                 <span
                                     class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium leading-4 bg-red-100 text-red-800">
-                                    Inactive
+                                    No verificado
                                 </span>
-                                {{-- @endif --}}
+                                @endif
                             </td>
                             <td class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium">
-                                <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                <a href="#" class="text-indigo-600 hover:text-indigo-900">Editar</a>
                             </td>
                         </tr>
-                        {{-- @endforeach --}}
+                        @endforeach
                     </tbody>
                 </table>
             </div>

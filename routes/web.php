@@ -52,6 +52,4 @@ Route::get('dropdown/search', function () {
     return view('dropdown-search');
 });
 
-Route::get('datatables', function () {
-    return view('datatables-page');
-});
+Route::get('datatables',  [\App\Http\Controllers\UserController::class, 'index']);
