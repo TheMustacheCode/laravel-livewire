@@ -93,7 +93,7 @@
             </div>
 
             <div class="mt-8">
-                {{-- {{ $users->links() }} --}}
+                {{ $users->links() }}
             </div>
         </div>
     </div>

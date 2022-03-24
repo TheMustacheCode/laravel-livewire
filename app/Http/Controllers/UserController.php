@@ -9,6 +9,6 @@ class UserController extends Controller
 {
     public function index()
     {
-        return view('datatables-page', ['users' => User::all()]);
+        return view('datatables-page', ['users' =>  User::paginate(10)]);
     }
 }
