@@ -15,8 +15,16 @@ class AddressController extends Controller
         return view('dropdown-page', compact('countries'));
     }
 
+    public function select2()
+    {
+        $countries = Country::all();
+
+        return view('select2-page', compact('countries'));
+    }
+
     public function store(Request $request)
     {
 
     }
+
 }

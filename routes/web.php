@@ -44,12 +44,13 @@ Route::post('/contact', function (Request $request) {
 
 
 
-Route::resource('dropdown', \App\Http\Controllers\AddressController::class)->only(['create', 'store']);
+Route::resource('dropdown', \App\Http\Controllers\AddressController::class)->only(['create', 'store', 'select2']);
 
 Route::get('cities', [\App\Http\Controllers\CityController::class, 'index'])->name('cities.index');
 
 Route::get('states', [\App\Http\Controllers\StateController::class, 'index'])->name('states.index');
 
+Route::get('select2', [\App\Http\Controllers\AddressController::class, 'select2'])->name('select2');
 
 
 Route::get('dropdown/search', function () {

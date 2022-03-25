@@ -44,7 +44,7 @@
                     </a>
                 </li>
                 <li class="relative mx-1 px-4 py-2 group bg-gray-300 rounded-full mb-1 md:mb-0" id="button_home">
-                    <a class="font-semibold whitespace-no-wrap text-gray-600 hover:text-blue-800" href="/dropdown/create">
+                    <a class="font-semibold whitespace-no-wrap text-gray-600 hover:text-blue-800" href="/select2">
                         <span class="last firstlevel">Select2 con livewire</span>
                     </a>
                 </li>
