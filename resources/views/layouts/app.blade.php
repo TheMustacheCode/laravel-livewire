@@ -20,6 +20,43 @@
 </head>
 
 <body class="antialiased md:bg-gray-100 bg-purple-700">
+    <div class="text-center mt-3">
+        <div class="inline-flex" id="main_menu">
+            <ul class="flex flex-wrap p-1 md:p-2 sm:bg-gray-300 sm:rounded-full text-sm md:text-base" id="menu_nav">
+                <li class="relative mx-1 px-4 py-2 group bg-gray-300 rounded-full mb-1 md:mb-0" id="button_home">
+                    <a class="font-semibold whitespace-no-wrap text-gray-600 hover:text-blue-800" href="/counter">
+                        <span class="last firstlevel">Contador</span>
+                    </a>
+                </li>
+                <li class="relative mx-1 px-4 py-2 group bg-gray-300 rounded-full mb-1 md:mb-0" id="button_admin">
+                    <a class="font-semibold whitespace-no-wrap text-gray-600 hover:text-blue-800" href="/contact">
+                        <span class="firstlevel">Formulario de Contacto</span>
+                    </a>
+                </li>
+                <li class="relative mx-1 px-4 py-2 group bg-gray-300 rounded-full mb-1 md:mb-0" id="button_home">
+                    <a class="font-semibold whitespace-no-wrap text-gray-600 hover:text-blue-800" href="/dropdown/create">
+                        <span class="last firstlevel">Selects anidados</span>
+                    </a>
+                </li>
+                <li class="relative mx-1 px-4 py-2 group bg-gray-300 rounded-full mb-1 md:mb-0" id="button_home">
+                    <a class="font-semibold whitespace-no-wrap text-gray-600 hover:text-blue-800" href="/dropdown/search">
+                        <span class="last firstlevel">Dropdown de busquedas</span>
+                    </a>
+                </li>
+                <li class="relative mx-1 px-4 py-2 group bg-gray-300 rounded-full mb-1 md:mb-0" id="button_home">
+                    <a class="font-semibold whitespace-no-wrap text-gray-600 hover:text-blue-800" href="/dropdown/create">
+                        <span class="last firstlevel">Select2 con livewire</span>
+                    </a>
+                </li>
+                <li class="relative mx-1 px-4 py-2 group bg-gray-300 rounded-full mb-1 md:mb-0" id="button_moderate">
+                    <a class="font-semibold whitespace-no-wrap text-gray-600 hover:text-blue-800" href="/datatable">
+                        <span class="">Datatables</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
     <main class="container mx-auto">
         @yield('content')
     </main>
