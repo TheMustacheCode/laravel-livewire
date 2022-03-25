@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## Instrucciones para utilizar del repositorio
+## Instrucciones para utilizar este repositorio
 
 ### 1- Clonar o descargar el código mediante.
 
@@ -42,7 +42,7 @@ DB_CONNECTION=sqlite
 # DB_PASSWORD=
 ```
 
-Creamos el archivo de para la base de datos
+Creamos el archivo para la base de datos
 ```
 touch database/database.sqlite
 
@@ -63,17 +63,12 @@ php artisan key:generate
 php artisan migrate --seed
 ```
 
-### 5- Creacion de las tablas y migraciones.
-```
-php artisan migrate --seed
-```
-
-### 6- Instalacion de dependencias javascript
+### 6- Instalacion de dependencias JS mediante npm.
 ```
 npm install && npm run dev
 ```
 
-### 7- Inicialización del servidor.
+### 7- Inicio del servidor.
 ```
 php artisan serve
 ```
