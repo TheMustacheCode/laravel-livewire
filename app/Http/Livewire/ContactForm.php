@@ -27,6 +27,8 @@ class ContactForm extends Component
 
     public function submitForm()
     {
+        $this->validate();
+
         $contact['name'] = $this->name;
         $contact['email'] = $this->email;
         $contact['contactMessage'] = $this->contactMessage;
