@@ -81,6 +81,4 @@ Route::get('dropdown/search', function () {
     return view('dropdown-search');
 });
 
-/*
-|--------------------------------------------------------------------------
-*/
+Route::get('datatables',  [\App\Http\Controllers\UserController::class, 'index']);
