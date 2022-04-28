@@ -41,4 +41,10 @@ class Select2Example extends Component
     {
         return view('livewire.select2-example');
     }
+
+    public function submit()
+    {
+        // Aqui puedes colocar la logica para guardar tu formulario.
+        dd('País', $this->selectedCountry);
+    }
 }

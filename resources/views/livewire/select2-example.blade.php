@@ -1,6 +1,6 @@
 <div>
     <div>
-        <form class="flex flex-col space-y-4">
+        <form wire:submit.prevent="submit()" class="flex flex-col space-y-4">
             @csrf
             <div wire:ignore>
                 <label for="" class="text-sm">País Select 2</label>
